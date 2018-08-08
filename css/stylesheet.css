@@ -1,0 +1,478 @@
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5em; /* makes text more readable */
+    text-align: center;
+}
+/* End CSS RESET */
+
+/* Color Themes 
+red= rgb:219.0.6 #DB0006
+pink= rgb:254.140.163 #FE8CA3
+green= rgb:152.198.189 #98c6bd
+brown= rgb:114.82.35 #725223
+cream= rgb:247.243.23 #F7F3EA
+*/
+
+html {
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav {
+    /*height: 45px;*/
+    background-color: rgba(255,255,255,.75);
+    align-items: center;
+    /*height: 10vh; */
+    height: 65px; /* required to fix nav bar height and logo position */
+    width: 100vw;
+}
+
+#nav-index {
+    /*height: 45px;*/
+    /*background-color: rgba(255,255,255,.75);*/
+    /*align-items: center;*/
+    /*height: 10vh;*/
+    /*width: 100vw; I don't think we need all of these twice*/
+    position:fixed;
+}
+
+/* make logo swap out on hover */
+/* Make the container relative */
+.home-logo a {
+    position: relative;	
+    top: -16px; /* fixes logoin nav bar position */
+	/*margin:  0 auto;*/
+}
+
+/* Select the image and make it absolute to the container */
+.home-logo a img {
+    position: absolute;
+    align-items: center;
+	overflow: hidden;
+	/* Sets the size for the images*/
+    height: 2rem;
+    width: 2rem;
+}
+
+/* 	We set z-index to be higher than the back image, so it's alwyas on the front.
+We give it an opacity leaner to .25s, that way when we hover we will get a nice fading effect. */
+
+.home-logo a .swap-on-hover__front-image {
+    z-index: 9999;
+    transition: opacity .5s linear;
+    cursor: pointer;
+}
+
+/* When we hover the figure element, the block with .swap-on-hover, we want to use > so the front-image is going to have opacity of 0, which means it will be hidden, to the back image will show */
+.home-logo a:hover > .swap-on-hover__front-image{
+    opacity: 0;
+}
+
+/* end logo swop on hover */
+/* need to scale the logo to work in nav*/
+
+nav ul {
+    list-style-type: none;
+    text-decoration: none;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 20px;
+    padding-right: 05vw;
+    padding-left: 05vw;
+}
+
+a:link, a:visited {
+    background-color: transparent;
+    text-transform: none;
+    color: inherit;
+}
+
+nav li {
+    font-weight: bold;
+    color: #000;
+    font-size: 1.0rem;
+}
+
+nav a:link {
+    display: block;
+    text-decoration: none;
+}
+
+/*.nav-list li: {*/
+/*    align-items: center;*/
+/*}*/
+
+.nav-list a:hover {
+    color:#725223;
+    font-weight: bold; /* I don't think this is affecting nav links */
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 3rem; /* tbd */
+    color: #725223;
+    font-variant: small-caps;
+    font-weight: 300;
+}
+
+h2 {
+    margin-top: .75rem;
+    font-weight: 600;
+    
+}
+
+h3 {
+    font-size: 1rem;
+    font-style:oblique;
+    color: #725223;
+}
+
+header {
+    height: 65vh;
+}
+
+.head-index {
+    background-image: url(../images/homeLarge.jpg);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    color: #FFF;
+}
+
+a {
+    text-decoration: none;
+}
+
+footer {
+    width:100%;
+    display:flex;
+    padding: 10px 20px 10px 40px;
+    background-color: #F7F3EA; /* cream */ 
+    color: #725223;
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+}
+
+footer p {
+    font-size: 0.75rem;
+    line-height: 1.25em; /* makes text tighter */
+}
+
+.address p {
+    text-align: left;
+}
+.hours p {
+      text-align: left;
+      padding-left: 40px;
+}
+
+main {
+    max-width: 600px;
+    margin:auto;
+    margin-bottom: 100px;
+    padding: 1.5rem; 
+}
+
+.wine {
+    margin-top: .5rem;
+    display: inline-block;
+    width: 100%;
+    
+}
+
+.name {
+    font-variant: small-caps;
+    font-weight: 600;
+    font-size:1rem;
+}
+
+.des {
+    font-size: .85rem;
+    font-style: oblique;
+    font-weight: lighter;
+}
+
+.price {
+    font-size: .85rem;
+    float:right;
+}
+
+span.name {
+    float:left;
+    text-align: left;
+    line-height: 1.25rem;
+}
+
+span.des {
+    float:left;
+    padding-left: .25rem;
+}
+
+
+section.contact {
+    display: flex;
+    flex-direction: row;
+    width:100vw;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+div.res {
+    width: 50vw;
+    margin: 2rem;
+    margin-bottom: 0px;
+}
+
+.map {
+    width: 50vw;
+    margin: 3rem;
+    margin-bottom: 0;
+}
+form {
+     color:#725223;
+     text-align: right;
+     width:20rem;
+     margin: auto;
+     line-height:2rem;
+}
+
+input[type=text] {
+    border: 1px solid #725223;
+    border-radius: 4px;
+    float: right;
+    text-align: left;
+    text-indent: .5rem;
+    width: 159px;
+    margin-top:.25rem;
+}
+
+input[type=text]:focus {
+    border: 1px solid #98c6bd;
+    outline: none;
+}
+
+input[type=date] {
+    border: 1px solid #725223;
+    border-radius: 4px;
+    float: right;
+    font-family: 'Raleway', sans-serif;
+    color:#725223;
+    width: 159px;
+    margin-top:.25rem;
+}
+
+input[type=date]:focus {
+    border: 1px solid #98c6bd;
+    outline: none;
+}
+
+input[type=date]::-webkit-inner-spin-button { display: none;}
+input[type=date]::-webkit-calendar-picker-indicator {color: black; margin-right: .5rem;}
+input[type=date]::-webkit-clear-button {display: none;}
+
+input[type=time] {
+    border: 1px solid #725223;
+    border-radius: 4px;
+    float: right;
+    font-family: 'Raleway', sans-serif;
+    color:#725223;
+    width: 159px;
+    margin-top:.25rem;
+}
+
+input[type=time]:focus {
+    border: 1px solid #98c6bd;
+    outline: none;
+}
+
+input[type=time]::-webkit-inner-spin-button {margin-right: .5rem;}
+input[type=time]::-webkit-clear-button {display: none;}
+
+input[type=tel] {
+    border: 1px solid #725223;
+    border-radius: 4px;
+    float: right;
+    text-align: left;
+    text-indent: .5rem;
+    width: 159px;
+    margin-top:.25rem;
+}
+
+input[type=tel]:focus {
+    border: 1px solid #98c6bd;
+    outline: none;
+}
+
+input[type=email] {
+    border: 1px solid #725223;
+    border-radius: 4px;
+    float: right;
+    text-align: left;
+    text-indent: .5rem;
+    width: 159px;
+    margin-top:.25rem;
+}
+
+input[type=email]:focus {
+    border: 1px solid #98c6bd;
+    outline: none;
+}
+
+input[type=submit] {
+    background-color: white;
+    border: 1.5px solid #98c6bd;
+    border-radius: 4px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: #98c6bd;
+    padding: .5rem;
+    text-decoration: none;
+    margin: 1rem;
+    cursor: pointer;
+    float: none;
+}
+
+input[type=submit]:hover {
+    background-color: #98c6bd;
+    color: white;
+}
+
+input[type=submit]:focus {
+    outline: none;
+    background-color: #FE8CA3;
+    border: 1.5px solid #FE8CA3;
+    color: white;
+}
+
+.res p{
+    padding: 1rem;
+    text-align: left;
+}
+
+/* Photo grid sourced from "https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_grid_responsive" -------------------------------------------------------------------------------------------------------------*/
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+    margin-bottom: 90px;
+    /*width: 75vw;*/
+    /*align-items: center; */
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+    -ms-flex: 33.333%; /* IE10 */
+    flex: 33.333%;
+    max-width: 33.333%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of three columns */
+@media screen and (max-width: 800px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+    
+    #column3 {
+        display: flex;
+        flex-direction: row;
+        max-width:100%;
+    }
+    
+    .left {
+        padding-right: 4px;
+    }
+    .right {
+        padding-left: 4px;
+    }
+    section.contact {
+        flex-direction:column-reverse;
+        margin:auto;
+        margin-bottom: 100px;
+    }
+     div.res {
+        width: 90vw;
+        margin: auto;
+        margin-right:2rem;
+  }
+    div.map {
+        width: 90vw;
+        height: 90vw;
+        margin: auto;
+        margin-right:2rem;
+        
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+    #column3 {
+        flex-direction: column;
+        max-width:100%;
+    }
+    .left {
+        padding-right: 0;
+    }
+    .right {
+        padding-left: 0;
+    }
+    
+/* makes nav bar a column on small screens */
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+    }
+    .nav-list li {
+        padding-top: 10px;
+    }
+    nav {
+        height: 210px; 
+        width: 115px;
+}
+    .home-logo a {
+        position: relative;	
+        top: -24px; /* fixes logo in nav bar position */
+}
+/*End-makes nav bar a column on small screens */
+}
+
+/* For wine menu */
+@media screen and (max-width: 670px) {
+    span.name {
+       display:block;
+       float: none;
+       text-align: center;
+    }
+    .price {
+        float:none;
+        padding-left:.5rem;
+    }
+    span.des {
+        float:none;
+        padding:none;
+    }
+}
+
+
+/* I'd like to add media quiery changes for the nav bar to stack when small*/
